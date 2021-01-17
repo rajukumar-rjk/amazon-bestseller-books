@@ -26,8 +26,8 @@ csv_writer.writerow(['book_rank',
                      'paper_type', 'price'])
 
 while pageNo <= totalPage:
-    if path.isfile('tutorial-bestsellar-books-'+str(pageNo)+'.html'):
-        with open('tutorial-bestsellar-books-'+str(pageNo)+'.html') as source:
+    if path.isfile('amazon-bestsellar-books-'+str(pageNo)+'.html'):
+        with open('amazon-bestsellar-books-'+str(pageNo)+'.html') as source:
             soup = BeautifulSoup(source, 'html.parser')
             print('file has been loaded from local')
     else:
@@ -37,7 +37,7 @@ while pageNo <= totalPage:
 
         soup = BeautifulSoup(source.content, 'html.parser')
 
-        html_file = open('tutorial-bestsellar-books-'+str(pageNo)+'.html', 'w')
+        html_file = open('amazon-bestsellar-books-'+str(pageNo)+'.html', 'w')
         html_file.write(soup.prettify())
         html_file.close()
         print('file has been saved on the local')
